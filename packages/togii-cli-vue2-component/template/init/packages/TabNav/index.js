@@ -1,0 +1,1 @@
+export { default as TabNav } from './src/Index'

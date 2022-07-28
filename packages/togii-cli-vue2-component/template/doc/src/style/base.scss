@@ -1,0 +1,79 @@
+@import './mixin.scss';
+
+*{
+  box-sizing: border-box;
+}
+
+body {
+  @include content-outer();
+  position: relative; 
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  color: $font-color;
+  background: $bg-color;
+
+  margin: 0;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+
+}
+
+h1,h2, h3, h4, h5, h6 { 
+  line-height: $title-line-height;
+  color: $title-font-color;
+}
+
+h2{font-size: ($font-size-base)*2;line-height: $title-line-height + .4}
+
+h3{font-size: $font-size-base +10px}
+
+h4{font-size: $font-size-base +4px; margin-bottom: 10px;font-weight: normal;}
+
+h5{font-size: $font-size-base +2px; margin-bottom: 10px;font-weight: normal;}
+
+p { margin: 0 0 12px 0; font-size: $font-size-base; color: $gray-dark-1;}
+
+
+a , a:active {
+  color: $link-color;
+  text-decoration: none;
+  outline: none;
+  word-wrap: break-word;
+  color: $link-color;
+
+  &:hover {
+    color: $link-hover-color;
+    // border-bottom-color: $link-decoration-hover-color;
+  }
+}
+
+ul {
+  margin: 1rem 0;
+}
+
+
+blockquote {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+  margin: auto;
+  max-width: 100%;
+  height: auto;
+}
+
+
+hr {
+  margin: 40px 0;
+  height: 1px;
+  border: none;
+  background-color: $gray-light-0;
+}

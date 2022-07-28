@@ -1,0 +1,40 @@
+{
+  "name": "togii-c",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "doc:serve": "togii-cli doc && vue-cli-service serve"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "togii-cli-vue2-component": "^1.0.0"
+  },
+  "devDependencies": {
+    "highlight.js": "11.2.0",
+    "github-markdown-css": "^5.1.0",
+    "clipboard": "^2.0.8",
+    "vue": "2.6.11",
+    "vue-router": "^3.2.0",
+    "vue-svg-loader": "^0.16.0",
+    "ant-design-vue": "1.6.5",
+    "@babel/plugin-proposal-decorators": "^7.17.8",
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-plugin-pwa": "~4.5.0",
+    "@vue/cli-plugin-router": "~4.5.0",
+    "@vue/cli-plugin-vuex": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "@vue/composition-api": "^1.4.1",
+    "@vue/compiler-core": "^3.2.31",
+    "@vue/eslint-config-standard": "^5.1.2",
+    "less": "3",
+    "less-loader": "5.0.0",
+    "raw-loader": "^4.0.2",
+    "sass": "^1.26.5",
+    "sass-loader": "^8.0.2",
+    "vue-template-compiler": "2.6.11"
+  }
+}

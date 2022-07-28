@@ -1,0 +1,19 @@
+{
+  "name": "togii",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "http://119.96.100.222:8085/eco-lib/web-tech-libs.git",
+  "author": "likeadoge <like_the_doge@outlook.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "init-pkg": "node ./script/entry/init.js pkg",
+    "init-app": "node ./script/entry/init.js app"
+  },
+  "devDependencies": {
+    "lerna": "^5.1.8"
+  },
+  "dependencies": {
+    "fs-extra": "^10.1.0"
+  }
+}
