@@ -12,6 +12,7 @@ const relative = (from: string, to: string, isFormFile: boolean = false) => {
     return p[0] === '.' ? p : ('./' + p)
 }
 
+
 export class Markdown {
     path = ''
     title = ''
