@@ -6,7 +6,8 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "doc:serve": "togii-cli doc && vue-cli-service serve"
+    "doc:serve": "togii-cli doc && vue-cli-service serve",
+    "doc:build": "togii-cli doc --build && vue-cli-service build&& togii-static 8001 ./dist"
   },
   "author": "",
   "license": "ISC",

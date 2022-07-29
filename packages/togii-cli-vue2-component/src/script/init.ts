@@ -4,16 +4,16 @@ import { template_path } from '../utils/template'
 
 const copy_template_file = (project_path: string) => {
     ['.docs', '.config', 'packages'].forEach(dirname => {
-        if(folder.exist(path.resolve(project_path, dirname))) return
+        if (folder.exist(path.resolve(project_path, dirname))) return
         folder.copy(
-            path.resolve(template_path(), `./template/init/${dirname}` ),
+            path.resolve(template_path(), `./template/init/${dirname}`),
             path.resolve(project_path, dirname),
         )
     });
     ['.gitignore'].forEach(dirname => {
-        if(file.exist(path.resolve(project_path, dirname))) return
+        if (file.exist(path.resolve(project_path, dirname))) return
         file.copy(
-            path.resolve(template_path(), `./template/init/${dirname}` ),
+            path.resolve(template_path(), `./template/init/${dirname}`),
             path.resolve(project_path, dirname),
         )
     })
@@ -51,9 +51,9 @@ const edit_package_json = (project_path: string) => {
             "vue-template-compiler": "2.6.11"
         }
 
-
         Object.assign(json.scripts, {
-            "doc:serve":'togii-cli doc && vue-cli-service serve'
+            "doc:serve": 'togii-cli doc && vue-cli-service serve',
+            "doc:build": "togii-cli doc --build && vue-cli-service build"
         })
 
         if (json.devDependencies) {
