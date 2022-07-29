@@ -3,6 +3,7 @@ const pkg = require('./package.json')
 
 module.exports = {
   publicPath: '/' + pkg.name,
+  outputDir: 'dist/' + pkg.name,
   lintOnSave: false,
   configureWebpack: {
     resolve: {
