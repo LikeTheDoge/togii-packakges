@@ -29,8 +29,8 @@ jobs:
 
     - name: Configure Git User
       run: |
-        git config --global user.email "like_a_doge@outlook.com"
-        git config --global user.name "lerna-ci@$GITHUB_ACTOR"
+        git config --global user.email "like_the_doge@outlook.com"
+        git config --global user.name "like_the_doge"
 
     - name: Check if able to publish changes
       run: npm whoami # will throw and exit if npm is not ready to publish
