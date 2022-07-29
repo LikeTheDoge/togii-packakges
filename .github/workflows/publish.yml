@@ -44,8 +44,5 @@ jobs:
     - name: Build
       run: npx lerna run build
 
-    - name: Checkout
-      run: git checkout -- *
-
     - name: Publish
-      run: npx lerna publish patch --yes --no-verify-access --no-git-clean-check # the flag is needed if NPM_TOKEN is an Automation Token
+      run: npx lerna publish patch --yes --no-verify-access --force-publish # the flag is needed if NPM_TOKEN is an Automation Token
