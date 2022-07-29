@@ -1,6 +1,6 @@
 {
   "name": "togii-cli-vue2-component",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "main": "lib/cjs/index.js",
   "module": "lib/mjs/index.js",
   "exports": {
@@ -11,10 +11,12 @@
   },
   "license": "MIT",
   "files": [
-    "/types","/lib","/template"
+    "/types",
+    "/lib",
+    "/template"
   ],
   "bin": {
-    "togii-cli":"./lib/cjs/index.js"
+    "togii-cli": "./lib/cjs/index.js"
   },
   "scripts": {
     "test": "jest",
