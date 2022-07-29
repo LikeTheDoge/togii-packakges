@@ -5,6 +5,7 @@ import * as matter from 'gray-matter'
 import { file } from '../../utils/file'
 
 const md = markdown_it({ html: true })
+
 const relative = (from: string, to: string, isFormFile: boolean = false) => {
     const f = isFormFile ? node_path.resolve(from, '../') : from
     const p = node_path.relative(f, to).split(node_path.sep).join(node_path.posix.sep)
