@@ -1,6 +1,6 @@
 {
   "name": "togii-c",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "main": "index.js",
   "private": true,
@@ -11,7 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "togii-cli-vue2-component": "^0.0.1"
+    "togii-cli-vue2-component": "^0.0.2"
   },
   "devDependencies": {
     "@babel/plugin-proposal-decorators": "^7.17.8",
