@@ -9,7 +9,7 @@ on:
       - master
     paths-ignore:
       - "*/**/publish.yml"
-      - /publish.yml
+      - 'publish.yml'
 jobs:
   build:
     runs-on: ubuntu-latest
