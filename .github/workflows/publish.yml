@@ -8,8 +8,9 @@ on:
     branches: 
       - master
     paths-ignore:
-      - "**/publish.yml"
-      - 'publish.yml'
+      - "**/yarn.lock"
+      - "**/package.json"
+      - "**/package-lock.json"
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -29,22 +30,22 @@ jobs:
           node-version: "16.x"
           registry-url: "http://39.101.133.158:4873/"
 
-    # - name: Configure Git User
-    #   run: |
-    #     git config --global user.email "like_the_doge@outlook.com"
-    #     git config --global user.name "like_the_doge"
+      - name: Configure Git User
+        run: |
+          git config --global user.email "like_the_doge@outlook.com"
+          git config --global user.name "like_the_doge"
 
-    # - name: Check if able to publish changes
-    #   run: npm whoami # will throw and exit if npm is not ready to publish
+      - name: Check if able to publish changes
+        run: npm whoami # will throw and exit if npm is not ready to publish
 
-    # - name: Install dependencies
-    #   run: yarn install
+      - name: Install dependencies
+        run: yarn install
 
-    # - name: bootstrap
-    #   run: npx lerna bootstrap
+      - name: bootstrap
+        run: npx lerna bootstrap
 
-    # - name: Build
-    #   run: npx lerna run build
+      - name: Build
+        run: npx lerna run build
 
-    # - name: Publish
-    #   run: npx lerna publish patch --yes --no-verify-access --force-publish # the flag is needed if NPM_TOKEN is an Automation Token
+      - name: Publish
+        run: npx lerna publish patch --yes --no-verify-access --force-publish # the flag is needed if NPM_TOKEN is an Automation Token
