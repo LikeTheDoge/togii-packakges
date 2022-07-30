@@ -7,8 +7,8 @@ on:
   push:
     branches: 
       - master
-    tags-ignore:
-      - "test1"
+    paths-ignore:
+      - publish.yml
 jobs:
   build:
     runs-on: ubuntu-latest
