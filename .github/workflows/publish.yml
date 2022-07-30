@@ -5,10 +5,10 @@ name: Node.js CI
 
 on:
   push:
-    tags-ignore:
-      - test
     branches: 
       - master
+    tags-ignore:
+      - "test1"
 jobs:
   build:
     runs-on: ubuntu-latest
