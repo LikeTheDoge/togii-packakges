@@ -5,9 +5,10 @@ name: Node.js CI
 
 on:
   push:
-    branches: ["master"]
     tags-ignore:
-      - test**.**.**
+      - test
+    branches: 
+      - master
 jobs:
   build:
     runs-on: ubuntu-latest
