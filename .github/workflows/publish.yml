@@ -5,29 +5,27 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ "master" ]
-    tags-ignore: 
+    branches: ["master"]
+    tags-ignore:
       - test**.**.**
 jobs:
   build:
-
     runs-on: ubuntu-latest
     env:
       NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }} # set this token manually
     steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: "0" # pulls all history and tags for Lerna to detect what packages changed.
+          token: ${{ secrets.GIT_TOKEN }} # this token is available by default
 
-    - name: Checkout
-      uses: actions/checkout@v2
-      with:
-        fetch-depth: "0" # pulls all history and tags for Lerna to detect what packages changed.
-        token: ${{ secrets.GIT_TOKEN }} # this token is available by default
-
-    # setup .npmrc using NODE_AUTH_TOKEN
-    - name: Setup .npmrc file for publish
-      uses: actions/setup-node@v2
-      with:
-        node-version: '16.x'
-        registry-url: 'http://39.101.133.158:4873/'
+      # setup .npmrc using NODE_AUTH_TOKEN
+      - name: Setup .npmrc file for publish
+        uses: actions/setup-node@v2
+        with:
+          node-version: "16.x"
+          registry-url: "http://39.101.133.158:4873/"
 
     # - name: Configure Git User
     #   run: |
@@ -39,10 +37,10 @@ jobs:
 
     # - name: Install dependencies
     #   run: yarn install
-      
+
     # - name: bootstrap
     #   run: npx lerna bootstrap
-    
+
     # - name: Build
     #   run: npx lerna run build
 
