@@ -35,9 +35,10 @@ jobs:
         run: |
           git config --global user.email "like_the_doge@outlook.com"
           git config --global user.name "like_the_doge"
-
+      
+      # will throw and exit if npm is not ready to publish
       - name: Check if able to publish changes
-        run: npm whoami # will throw and exit if npm is not ready to publish
+        run: npm whoami 
 
       - name: Install dependencies
         run: yarn install
@@ -48,5 +49,6 @@ jobs:
       - name: Build
         run: npx lerna run build
 
+      # the flag is needed if NPM_TOKEN is an Automation Token
       - name: Publish
-        run: npx lerna publish patch --yes --no-verify-access --force-publish # the flag is needed if NPM_TOKEN is an Automation Token
+        run: npx lerna publish patch --yes --no-verify-access --force-publish 
