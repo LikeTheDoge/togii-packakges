@@ -1,0 +1,11 @@
+:root {
+    --header-height: 72px;
+    --sidebar-width:280px;
+    --theme-color: #66ccff;
+    --theme-color-r: 102;
+    --theme-color-g: 204;
+    --theme-color-b: 255;
+    --theme-color-light: rgba(0, 0, 0, 0.04);
+    --color-gray:#888888;
+    --color-gray-light:#cccccc;
+}

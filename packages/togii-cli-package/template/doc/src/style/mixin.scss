@@ -1,0 +1,44 @@
+@import "./variables.scss";
+
+@mixin mobile {
+  @media screen and (max-width: $md) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: $md) {
+    @content;
+  }
+}
+
+@mixin content {
+  display: block;
+  width: 100%;
+  min-width: 1200px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+@mixin content-outer {
+  min-width: 1200px;
+  
+  @media only screen and (max-width: 767px) {
+    min-width: 0;
+  }
+}
+
+@mixin single-line-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// 两行省略
+@mixin line-ellipsis($line: 2) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: $line;
+  -webkit-box-orient: vertical;
+}

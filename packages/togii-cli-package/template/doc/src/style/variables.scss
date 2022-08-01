@@ -1,0 +1,85 @@
+// Colors
+$red           :#fa5662;
+$blue          :#3d6ade;
+$blue-bright   :#1e9ae9;
+$btn-blue-bright: #477AFF;
+
+$theme-color: $blue ;
+$theme-color-light: $blue-bright;
+
+$gray-light-0: #f7f8fa;
+$gray-light-1: #f3f5f9;
+$gray-light-2: #e7eaf2;
+$gray-light-3: #e8e8e8;
+$gray-light-4: #EEEEEE !default;
+
+$gray: #909399;
+
+$gray-dark-0: #101725;
+$gray-dark-1: #333;
+$gray-dark-2: #5d6676;
+
+$white: #fff;
+$black :#000;
+
+$bg-color    : $white;
+
+// font
+$font-size-base: 14px;
+$font-size-lg: $font-size-base + 4px;
+$font-size-sm: $font-size-base - 2px;
+$font-color  : $gray-dark-1;
+$font-family-base: -apple-system,BlinkMacSystemFont,Helvetica Neue,Helvetica,PingFang SC,Arial,Microsoft YaHei,Source Han Sans SC,sans-serif;
+
+// line-height
+$line-height-base: 1.5;
+$line-height-lg: $line-height-base + .3;
+$line-height-sm: $line-height-base - .1;
+
+$btn-height-base: 32px;
+$btn-height-lg: $btn-height-base + 10px;
+$btn-height-sm: $btn-height-base - 2px;
+
+$input-height-base: 30px;
+
+// border-radius
+$border-radius-base : 2px;
+$border-radius-lg   : $border-radius-base * 2;
+
+// header
+$title-line-height : $line-height-base - 0.1;
+$title-font-color  : $gray-dark-0;
+$title-font-size-base : $font-size-base + 2px;
+
+
+// header
+$header-height: 70px;
+
+// link
+$link-color: $theme-color;
+$link-hover-color : $theme-color-light;
+
+// content
+$content-width: 1280px;
+$content-width-min: 1200px;
+
+//Responsive layout
+$sm : 576px;
+$md : 768px;
+$lg : 992px;
+$xl : 1200px;
+$xxl : 1600px;
+
+// 阴影
+$list-shadow: 0 3px 8px 0 rgba(235,240,246,.6);
+$tab-shadow: 0 3px 4px 0 rgba(28,30,43,.08);
+$card-shadow: 0 3px 5px 0 rgba(28,30,43,.06);
+$card-hover-shadow: 0 9px 15px 1px rgba(155,160,176,.27);
+
+
+
+
+
+
+
+
