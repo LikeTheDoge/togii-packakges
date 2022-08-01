@@ -13,7 +13,8 @@
   "files": [
     "/types",
     "/lib",
-    "/template"
+    "/template",
+    "/template/init/.gitignore"
   ],
   "bin": {
     "togii-cli": "./lib/cjs/index.js"
