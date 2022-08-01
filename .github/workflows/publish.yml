@@ -1,0 +1,52 @@
+# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: Node.js CI
+
+on:
+  push:
+    branches: 
+      - master
+    paths-ignore:
+      - "**/lerna.json"
+      - "**/yarn.lock"
+      - "**/package.json"
+      - "**/package-lock.json"
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }} # set this token manually
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: "0" # pulls all history and tags for Lerna to detect what packages changed.
+          token: ${{ secrets.GIT_TOKEN }} # this token is available by default
+
+      # setup .npmrc using NODE_AUTH_TOKEN
+      - name: Setup .npmrc file for publish
+        uses: actions/setup-node@v2
+        with:
+          node-version: "16.x"
+          registry-url: "http://39.101.133.158:4873/"
+
+      - name: Configure Git User
+        run: |
+          git config --global user.email "like_the_doge@outlook.com"
+          git config --global user.name "like_the_doge"
+
+      - name: Check if able to publish changes
+        run: npm whoami # will throw and exit if npm is not ready to publish
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: bootstrap
+        run: npx lerna bootstrap
+
+      - name: Build
+        run: npx lerna run build
+
+      - name: Publish
+        run: npx lerna publish patch --yes --no-verify-access --force-publish # the flag is needed if NPM_TOKEN is an Automation Token

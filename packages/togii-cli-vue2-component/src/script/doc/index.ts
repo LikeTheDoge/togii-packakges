@@ -7,6 +7,7 @@ import * as rimraf from 'rimraf'
 
 export const doc = (project_path: string, _: any) => {
 
+    const type = _.build ? 'build' : 'serve'
     const src_path = path.resolve(project_path, './__doc_source__')
     const src_build_path = path.resolve(project_path, './__doc_source__/build')
 
@@ -35,8 +36,8 @@ export const doc = (project_path: string, _: any) => {
 
     // 创建组件展示 .vue 页面
     const componentVueFiles = components.map(component => {
-        const markdown = new Markdown(component.name, component.docPath,{
-            public:json.read(path.resolve(project_path, './package.json')).name as string
+        const markdown = new Markdown(component.name, component.docPath, {
+            public: json.read(path.resolve(project_path, './package.json')).name as string
         })
         const demo = folder.exist(component.demoPath)
             ? new DemoGroup(
@@ -58,8 +59,8 @@ export const doc = (project_path: string, _: any) => {
     // 创建文章信息列表
     const docs = fs.readdirSync(path.resolve(project_path, './.docs'), { withFileTypes: true })
         .filter(v => v.isFile() && v.name.indexOf('.md') > 0)
-        .map(v => new Markdown(v.name.replace('.md', ''), path.resolve(project_path, './.docs', v.name),{
-            public:json.read(path.resolve(project_path, './package.json')).name as string
+        .map(v => new Markdown(v.name.replace('.md', ''), path.resolve(project_path, './.docs', v.name), {
+            public: json.read(path.resolve(project_path, './package.json')).name as string
         }));
 
     // 创建文章展示 .vue 页面
@@ -73,12 +74,12 @@ export const doc = (project_path: string, _: any) => {
 
     // 创建 public 文件夹
     rimraf.sync(path.resolve(project_path, './public'))
-    if (folder.exist(path.resolve(project_path, './.docs/static'))) {
+    if (folder.exist(path.resolve(project_path, './.docs/public'))) {
         const base = json.read(path.resolve(project_path, './package.json')).name as string
         fs.mkdirSync(path.resolve(project_path, './public'))
         folder.copy(
-            path.resolve(project_path, './.docs/static'),
-            path.resolve(project_path, `./public/${base}`)
+            path.resolve(project_path, './.docs/public'),
+            path.resolve(project_path, type === 'serve' ? `./public/${base}` : `./public`)
         )
     }
 
