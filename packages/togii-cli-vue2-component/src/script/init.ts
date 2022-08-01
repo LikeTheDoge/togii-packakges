@@ -10,11 +10,11 @@ const copy_template_file = (project_path: string) => {
             path.resolve(project_path, dirname),
         )
     });
-    ['.gitignore'].forEach(dirname => {
-        if (file.exist(path.resolve(project_path, dirname))) return
+    [['gitignore','.gitignore']].forEach(([filename0,filename1]) => {
+        if (file.exist(path.resolve(project_path, filename1))) return
         file.copy(
-            path.resolve(template_path(), `./template/init/${dirname}`),
-            path.resolve(project_path, dirname),
+            path.resolve(template_path(), `./template/init/${filename0}`),
+            path.resolve(project_path, filename1),
         )
     })
 }
