@@ -15,15 +15,26 @@ const port = parseInt(argv._[0])
 console.log('port: '+ port)
 const source = path.resolve(project_path, argv._[1])
 console.log('source: '+ source)
-const index_path = path.resolve(source, './index.html')
 
 const app = new koa()
 
 app.use(koa_static(source))
 
-app.use(ctx => {
-    ctx.type = "html";
-    ctx.body = fs.readFileSync(index_path);
+app.use((ctx,next) => {
+    const p = ctx.path.split('/').filter(v => v.trim())
+    let index_path = ''
+    if(p[0] && fs.existsSync(path.resolve(source, './' + p[0],'./index.html'))){
+        index_path = path.resolve(source, './' + p[0],'./index.html')
+    }else if(fs.existsSync(path.resolve(source, './index.html'))){
+        index_path = path.resolve(source, './index.html')
+    }
+
+    if(index_path){
+        ctx.type = "html";
+        ctx.body = fs.readFileSync(index_path);
+    }else{
+        next()
+    }
 })
 
 app.listen(port)
