@@ -251,7 +251,7 @@ export class RouteFile {
             {
                 name:"${v.name}",
                 path:"${v.path}",
-                component: require("${v.impl}").default
+                component: import("${v.impl}")
             }
                 `).join(',\r')
             }
