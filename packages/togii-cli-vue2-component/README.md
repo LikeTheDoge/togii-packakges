@@ -22,7 +22,7 @@ yarn add togii-cli-vue2-component@latest
 
 ## 本地文档服务
 
-- `doc --serve` -> 通过本地服务打开项目文档 
+1. `doc --serve` -> 通过本地服务打开项目文档 
 
 会根据当前库的 packages 和 .docs 编译生成文档相关的中间代码
 
@@ -31,7 +31,7 @@ yarn add togii-cli-vue2-component@latest
 之后可以通过 `vue-cli-service serve` 打开文档服务
 
 
-- `doc --build` -> 通过本地服务打开项目文档 
+2. `doc --build` -> 通过本地服务打开项目文档 
 
 会根据当前库的 packages 和 .docs 编译生成文档相关的中间代码
 
