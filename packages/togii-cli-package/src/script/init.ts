@@ -54,8 +54,8 @@ const edit_package_json = (project_path: string) => {
         }
 
         Object.assign(json.scripts, {
-            "doc:serve": "togii-cli doc-dist && npx togii-static 8001 ./dist",
-            "doc:build": "togii-cli doc --build && vue-cli-service build && lerna run build"
+            "doc:serve": "togii-cli doc && vue-cli-service serve",
+            "doc:build": "togii-cli doc --build && vue-cli-service build && lerna run doc:build && togii-cli dist"
         })
 
         if (json.devDependencies) {
