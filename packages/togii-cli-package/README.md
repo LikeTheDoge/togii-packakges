@@ -1,197 +1,59 @@
 ---
-title: 介绍
-description: 这里应该是对组件库的介绍
+title: tog-cli-package
+subtitle: Monorepo 管理脚手架
+description: 对 monorepo 主项目脚本一些封装
 ---
 
-# Dillinger
-## _The Last Markdown Editor, Ever_
+## 安装
 
-[![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://nodesource.com/products/nsolid)
-
-[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
-
-Dillinger is a cloud-enabled, mobile-ready, offline-storage compatible,
-AngularJS-powered HTML5 Markdown editor.
-
-- Type some Markdown on the left
-- See HTML in the right
-- ✨Magic ✨
-
-## Features
-
-- Import a HTML file and watch it magically convert to Markdown
-- Drag and drop images (requires your Dropbox account be linked)
-- Import and save files from GitHub, Dropbox, Google Drive and One Drive
-- Drag and drop markdown and HTML files into Dillinger
-- Export documents as Markdown, HTML and PDF
-
-Markdown is a lightweight markup language based on the formatting conventions
-that people naturally use in email.
-As [John Gruber] writes on the [Markdown site][df1]
-
-> The overriding design goal for Markdown's
-> formatting syntax is to make it as readable
-> as possible. The idea is that a
-> Markdown-formatted document should be
-> publishable as-is, as plain text, without
-> looking like it's been marked up with tags
-> or formatting instructions.
-
-This text you see here is *actually- written in Markdown! To get a feel
-for Markdown's syntax, type some text into the left window and
-watch the results in the right.
-
-## Tech
-
-Dillinger uses a number of open source projects to work properly:
-
-- [AngularJS] - HTML enhanced for web apps!
-- [Ace Editor] - awesome web-based text editor
-- [markdown-it] - Markdown parser done right. Fast and easy to extend.
-- [Twitter Bootstrap] - great UI boilerplate for modern web apps
-- [node.js] - evented I/O for the backend
-- [Express] - fast node.js network app framework [@tjholowaychuk]
-- [Gulp] - the streaming build system
-- [Breakdance](https://breakdance.github.io/breakdance/) - HTML
-to Markdown converter
-- [jQuery] - duh
-
-And of course Dillinger itself is open source with a [public repository][dill]
- on GitHub.
-
-## Installation
-
-Dillinger requires [Node.js](https://nodejs.org/) v10+ to run.
-
-Install the dependencies and devDependencies and start the server.
-
-```sh
-cd dillinger
-npm i
-node app
+```
+yarn add togii-cli-package@latest
 ```
 
-For production environments...
+## 初始化项目
 
-```sh
-npm install --production
-NODE_ENV=production node app
-```
+`init` -> 初始化类库
+  
+在项目通过 `npm init` 创建之后使用，每个项目只用一次。
 
-## Plugins
+会在项目内添加 *初始代码（包括源码，配置，示例代码）*，*修改 package.json(包括添加 script 和依赖)*
 
-Dillinger is currently extended with the following plugins.
-Instructions on how to use them in your own application are linked below.
+之后需要通过 yarn install 安装依赖
 
-| Plugin | README |
-| ------ | ------ |
-| Dropbox | [plugins/dropbox/README.md][PlDb] |
-| GitHub | [plugins/github/README.md][PlGh] |
-| Google Drive | [plugins/googledrive/README.md][PlGd] |
-| OneDrive | [plugins/onedrive/README.md][PlOd] |
-| Medium | [plugins/medium/README.md][PlMe] |
-| Google Analytics | [plugins/googleanalytics/README.md][PlGa] |
+## 本地文档服务
 
-## Development
+1. `doc --serve` -> 通过本地服务打开项目文档 
 
-Want to contribute? Great!
+会根据当前库的 packages 和 .docs 编译生成文档相关的中间代码
 
-Dillinger uses Gulp + Webpack for fast developing.
-Make a change in your file and instantaneously see your updates!
+并复制 `/.config/vue.config.doc.js` 到 `/vue.config.js`
 
-Open your favorite Terminal and run these commands.
+之后可以通过 `vue-cli-service serve` 打开文档服务
 
-First Tab:
 
-```sh
-node app
-```
+2. `doc --build` -> 通过本地服务打开项目文档 
 
-Second Tab:
+会根据当前库的 packages 和 .docs 编译生成文档相关的中间代码
 
-```sh
-gulp watch
-```
+并复制 `/.config/vue.config.doc.js` 到 `/vue.config.js`
 
-(optional) Third:
+之后可以通过 `vue-cli-service build` 生成目标代码到 `/dist` 目录
 
-```sh
-karma test
-```
 
-#### Building for source
+3. `dist` -> 移动子项目内文档静态文件  
 
-For production release:
+将子项目 `/packages/*/dist` 内部所有文件移动到主目录 `/dist` 文件夹中 （用于生成整个 monorepo 的文档）
 
-```sh
-gulp build --prod
-```
+## npm script 脚本
 
-Generating pre-built zip archives for distribution:
+`yarn doc:serve`
 
-```sh
-gulp build dist --prod
-```
+- 调用 `toggii-cli doc --server` 
+- 调用 `vue-cli-service serve` 打开文档服务
 
-## Docker
+`yarn doc:build`
 
-Dillinger is very easy to install and deploy in a Docker container.
-
-By default, the Docker will expose port 8080, so change this within the
-Dockerfile if necessary. When ready, simply use the Dockerfile to
-build the image.
-
-```sh
-cd dillinger
-docker build -t <youruser>/dillinger:${package.json.version} .
-```
-
-This will create the dillinger image and pull in the necessary dependencies.
-Be sure to swap out `${package.json.version}` with the actual
-version of Dillinger.
-
-Once done, run the Docker image and map the port to whatever you wish on
-your host. In this example, we simply map port 8000 of the host to
-port 8080 of the Docker (or whatever port was exposed in the Dockerfile):
-
-```sh
-docker run -d -p 8000:8080 --restart=always --cap-add=SYS_ADMIN --name=dillinger <youruser>/dillinger:${package.json.version}
-```
-
-> Note: `--capt-add=SYS-ADMIN` is required for PDF rendering.
-
-Verify the deployment by navigating to your server address in
-your preferred browser.
-
-```sh
-127.0.0.1:8000
-```
-
-## License
-
-MIT
-
-**Free Software, Hell Yeah!**
-
-[//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
-
-   [dill]: <https://github.com/joemccann/dillinger>
-   [git-repo-url]: <https://github.com/joemccann/dillinger.git>
-   [john gruber]: <http://daringfireball.net>
-   [df1]: <http://daringfireball.net/projects/markdown/>
-   [markdown-it]: <https://github.com/markdown-it/markdown-it>
-   [Ace Editor]: <http://ace.ajax.org>
-   [node.js]: <http://nodejs.org>
-   [Twitter Bootstrap]: <http://twitter.github.com/bootstrap/>
-   [jQuery]: <http://jquery.com>
-   [@tjholowaychuk]: <http://twitter.com/tjholowaychuk>
-   [express]: <http://expressjs.com>
-   [AngularJS]: <http://angularjs.org>
-   [Gulp]: <http://gulpjs.com>
-
-   [PlDb]: <https://github.com/joemccann/dillinger/tree/master/plugins/dropbox/README.md>
-   [PlGh]: <https://github.com/joemccann/dillinger/tree/master/plugins/github/README.md>
-   [PlGd]: <https://github.com/joemccann/dillinger/tree/master/plugins/googledrive/README.md>
-   [PlOd]: <https://github.com/joemccann/dillinger/tree/master/plugins/onedrive/README.md>
-   [PlMe]: <https://github.com/joemccann/dillinger/tree/master/plugins/medium/README.md>
-   [PlGa]: <https://github.com/RahulHP/dillinger/blob/master/plugins/googleanalytics/README.md>
+- 调用 `togii-cli doc --build` 生成代码
+- 调用 `vue-cli-service build`,生成 monorepo 项目的文档。
+- 调用 `lerna run doc:build` 对 `/packages/*` 内所有项目生成文档。
+- 调用 `togii-cli dist`，将子项目内的文档代码（`/packages/*/dist`）拷贝到 `/dist` 目录中 
