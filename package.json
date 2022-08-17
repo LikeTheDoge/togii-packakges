@@ -1,44 +1,43 @@
 {
-  "name": "togii-packages",
-  "version": "1.0.0",
-  "main": "index.js",
-  "repository": "http://119.96.100.222:8085/eco-lib/web-tech-libs.git",
-  "author": "likeadoge <like_the_doge@outlook.com>",
-  "license": "MIT",
-  "private": true,
-  "scripts": {
-    "init-pkg": "node ./script/entry/init.js pkg",
-    "init-app": "node ./script/entry/init.js app",
-    "doc:serve": "togii-cli doc && vue-cli-service serve"
-  },
-  "devDependencies": {
-    "@babel/plugin-proposal-decorators": "^7.17.8",
-    "@vue/cli-plugin-babel": "~4.5.0",
-    "@vue/cli-plugin-eslint": "~4.5.0",
-    "@vue/cli-plugin-pwa": "~4.5.0",
-    "@vue/cli-plugin-router": "~4.5.0",
-    "@vue/cli-plugin-vuex": "~4.5.0",
-    "@vue/cli-service": "~4.5.0",
-    "@vue/compiler-core": "^3.2.31",
-    "@vue/composition-api": "^1.4.1",
-    "@vue/eslint-config-standard": "^5.1.2",
-    "ant-design-vue": "1.6.5",
-    "clipboard": "^2.0.8",
-    "github-markdown-css": "^5.1.0",
-    "highlight.js": "11.2.0",
-    "lerna": "^5.1.8",
-    "less": "3",
-    "less-loader": "5.0.0",
-    "raw-loader": "^4.0.2",
-    "sass": "^1.26.5",
-    "sass-loader": "^8.0.2",
-    "vue": "2.6.11",
-    "vue-router": "^3.2.0",
-    "vue-svg-loader": "^0.16.0",
-    "vue-template-compiler": "2.6.11"
-  },
-  "dependencies": {
-    "fs-extra": "^10.1.0",
-    "togii-cli-vue2-component": "^0.0.4"
-  }
+    "name": "togii-packages",
+    "version": "1.0.0",
+    "main": "index.js",
+    "repository": "http://119.96.100.222:8085/eco-lib/web-tech-libs.git",
+    "author": "likeadoge <like_the_doge@outlook.com>",
+    "license": "MIT",
+    "private": true,
+    "scripts": {
+        "init-pkg": "node ./script/entry/init.js pkg",
+        "init-app": "node ./script/entry/init.js app",
+        "doc:serve": "togii-cli doc && vue-cli-service serve"
+    },
+    "devDependencies": {
+        "@babel/plugin-proposal-decorators": "^7.17.8",
+        "@vue/cli-plugin-babel": "~4.5.0",
+        "@vue/cli-plugin-eslint": "~4.5.0",
+        "@vue/cli-plugin-pwa": "~4.5.0",
+        "@vue/cli-plugin-router": "~4.5.0",
+        "@vue/cli-plugin-vuex": "~4.5.0",
+        "@vue/cli-service": "~4.5.0",
+        "@vue/compiler-core": "^3.2.31",
+        "@vue/composition-api": "^1.4.1",
+        "@vue/eslint-config-standard": "^5.1.2",
+        "ant-design-vue": "1.6.5",
+        "clipboard": "^2.0.8",
+        "github-markdown-css": "^5.1.0",
+        "highlight.js": "11.2.0",
+        "lerna": "^5.1.8",
+        "less": "3",
+        "less-loader": "5.0.0",
+        "raw-loader": "^4.0.2",
+        "sass": "^1.26.5",
+        "sass-loader": "^8.0.2",
+        "vue": "2.6.11",
+        "vue-router": "^3.2.0",
+        "vue-svg-loader": "^0.16.0",
+        "vue-template-compiler": "2.6.11"
+    },
+    "dependencies": {
+        "fs-extra": "^10.1.0"
+    }
 }
