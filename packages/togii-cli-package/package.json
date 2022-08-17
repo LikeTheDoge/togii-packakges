@@ -1,6 +1,6 @@
 {
   "name": "togii-cli-package",
-  "version": "0.0.17",
+  "version": "0.0.18",
   "main": "lib/cjs/index.js",
   "module": "lib/mjs/index.js",
   "exports": {
