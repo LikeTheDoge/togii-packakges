@@ -46,9 +46,9 @@ export class Markdown {
 
         Object.assign(this, {
             rawMarkdownContent,
-            title: title || '(blank)',
-            subtitle: subtitle || '(blank)',
-            description: description || '(blank)'
+            title: title || '',
+            subtitle: subtitle || '',
+            description: description || ''
         });
     }
 
@@ -247,7 +247,7 @@ export class RouteFile {
         export const base = "/${this.base}/" 
 
         export const routes = [
-            ${[...compRoutes, ...docRoutes].map(v => `
+            ${[ ...docRoutes,...compRoutes].map(v => `
             {
                 name:"${v.name}",
                 path:"${v.path}",

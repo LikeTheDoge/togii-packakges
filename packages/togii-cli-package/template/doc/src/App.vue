@@ -4,6 +4,7 @@
             <!-- <app-header class="header"></app-header> -->
             <app-sidebar></app-sidebar>
             <router-view></router-view>
+            <app-article-nav ref="articleNav"></app-article-nav>
         </div>
     </div>
 </template>
@@ -11,15 +12,26 @@
 <script>
 import AppSidebar from "./AppSidebar.vue";
 import AppHeader from "./AppHeader.vue";
+import AppArticleNav from './AppArticleNav.vue'
 import { nav } from "../build/route.js";
 export default {
-    components: { AppSidebar, AppHeader },
+    components: { AppSidebar, AppHeader,AppArticleNav },
     data() {
         return {
             nav,
         };
     },
     methods: {},
+    async mounted(){
+        
+        this.$router.afterEach( async ()=>{
+            await this.$nextTick()
+            this.$refs.articleNav.$$update()
+        })
+        
+        await this.$nextTick()
+        this.$refs.articleNav.$$update()
+    }
 };
 </script>
 
