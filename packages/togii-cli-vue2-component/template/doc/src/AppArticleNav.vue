@@ -2,10 +2,10 @@
 
     <nav class="nav">
         <div
-
             v-for="v in list"
             :key="v.id"
             :href="'#'+v.id"
+            :class="['header','header-'+v.level]"
         >
             <a :href="'#'+v.id">{{v.text}}</a>
         </div>
@@ -73,5 +73,46 @@ nav.nav {
         background-color: var(--color-gray-light);
     }
 
+    .header > a {
+        color: #1a1a1a;
+        display: inline-block;
+        border-bottom: 1px solid transparent;
+        transition: border 0.2s ease;
+        margin-top: 5px;
+        -webkit-transition: border 0.2s ease;
+        -moz-transition: border 0.2s ease;
+        text-decoration: none;
+        font-size: 12px;
+        background-color: transparent;
+    }
+
+    .header-0 {
+        > a {
+            color: #1a1a1a;
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 3;
+            text-transform: uppercase;
+            text-align: start;
+            letter-spacing: 0.08em;
+            display: block;
+            font-size: 14px;
+        }
+    }
+
+    .header-2 {
+        margin-left: 12px;
+    }
+
+    .header-3 {
+        margin-left: 24px;
+    }
+
+    .header-4 {
+        margin-left: 36px;
+    }
+    .header-5 {
+        margin-left: 48px;
+    }
 }
 </style>

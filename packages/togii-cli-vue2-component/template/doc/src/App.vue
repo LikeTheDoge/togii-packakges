@@ -23,6 +23,9 @@ export default {
     },
     methods: {},
     mounted(){
+        this.$router.afterEach(()=>{
+             this.$refs.articleNav.$$update()
+        })
         window.upp = ()=> this.$refs.articleNav.$$update()
     }
 };

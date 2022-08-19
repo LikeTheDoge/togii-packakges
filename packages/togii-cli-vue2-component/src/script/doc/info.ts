@@ -46,9 +46,9 @@ export class Markdown {
 
         Object.assign(this, {
             rawMarkdownContent,
-            title: title || '(blank)',
-            subtitle: subtitle || '(blank)',
-            description: description || '(blank)'
+            title: title || '',
+            subtitle: subtitle || '',
+            description: description || ''
         });
     }
 
