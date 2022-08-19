@@ -35,7 +35,18 @@ export default {
                 const id =
                     "h_" +
                     Math.floor(Math.random() * 0xffffffffff).toString(16);
-                ele.id = id;
+            
+
+                const arch = document.createElement('div')
+
+                arch.className = 'arch'
+
+                arch.id = id;
+                
+                ele.appendChild(arch)    
+
+                ele.style.position = 'relative'
+
                 return { id, text, level };
             });
 
@@ -46,6 +57,14 @@ export default {
     },
 };
 </script>
+
+<style>
+.arch{
+    position: absolute;
+    left: 0 ;
+    top: -40px;
+}
+</style>
 
 <style lang="scss" scoped>
 nav.nav {

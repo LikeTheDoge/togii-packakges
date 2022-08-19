@@ -23,8 +23,9 @@ export default {
     },
     methods: {},
     mounted(){
-        this.$router.afterEach(()=>{
-             this.$refs.articleNav.$$update()
+        this.$router.afterEach( async ()=>{
+            await this.$nextTick()
+            this.$refs.articleNav.$$update()
         })
         window.upp = ()=> this.$refs.articleNav.$$update()
     }
