@@ -247,7 +247,7 @@ export class RouteFile {
         export const base = "/${this.base}/" 
 
         export const routes = [
-            ${[...compRoutes, ...docRoutes].map(v => `
+            ${[ ...docRoutes,...compRoutes].map(v => `
             {
                 name:"${v.name}",
                 path:"${v.path}",

@@ -22,12 +22,15 @@ export default {
         };
     },
     methods: {},
-    mounted(){
+    async mounted(){
+        
         this.$router.afterEach( async ()=>{
             await this.$nextTick()
             this.$refs.articleNav.$$update()
         })
-        window.upp = ()=> this.$refs.articleNav.$$update()
+        
+        await this.$nextTick()
+        this.$refs.articleNav.$$update()
     }
 };
 </script>
