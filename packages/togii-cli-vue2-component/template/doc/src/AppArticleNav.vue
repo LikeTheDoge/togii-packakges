@@ -50,7 +50,7 @@ export default {
 <style lang="scss" scoped>
 nav.nav {
     // position: fixed;
-    border-right: 1px solid var(--theme-color-light);
+    // border-right: 1px solid var(--theme-color-light);
     position: sticky;
     // top: var(--header-height);
     height: 100vh;
@@ -59,7 +59,7 @@ nav.nav {
     overflow: auto;
     padding: 54px 0;
 
-    &::-webkit-scrollbar-track {
+&::-webkit-scrollbar-track {
         background-color: #f5f5f5;
     }
 
@@ -84,6 +84,10 @@ nav.nav {
         text-decoration: none;
         font-size: 12px;
         background-color: transparent;
+
+        &:hover {
+            opacity: 0.5;
+        }
     }
 
     .header-0 {

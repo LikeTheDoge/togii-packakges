@@ -27,7 +27,7 @@ export default {
 .markdown-post {
     --content-nav-width: 240px;
     flex: auto;
-    padding-right: var(--content-nav-width);
+    // padding-right: var(--content-nav-width);
 }
 .markdown-post-inner {
     max-width: 804px;
