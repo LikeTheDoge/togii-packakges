@@ -8,7 +8,7 @@
 
             <router-link
                 v-if="v.path"
-                :class="{ top:true,disabled:v.children}"
+                :class="{ top:true,link_able:!v.children,disabled:v.children }"
                 :to="v.path"
             >
                 <div>
@@ -73,29 +73,39 @@ nav.sidebar {
         transition: all 0.3s ease-out;
         padding: 6px 0;
 
+        &.disabled{
+            pointer-events: none;
+        }
+
         &.top + a.child {
             margin-top: 4px;
         }
+
         &.top {
             > div {
-                cursor: pointer !important;
                 color: #888888;
                 font-weight: 600;
                 font-size: 14px;
-                cursor: pointer;
                 padding: 12px 24px;
                 transition: all 0.3s ease-out;
                 white-space: nowrap;
                 flex: auto;
+            }
+        }
 
-                &:hover {
-                    background: var(--theme-color-light);
-                }
+        &.top.link_able {
+            > div {
+                cursor: pointer !important;
+            }
+
+            &.link_able:hover {
+                background: var(--theme-color-light);
             }
         }
 
         &.top.active {
             padding-left: 12px;
+            background: #fff!important;
             > div {
                 flex: 0;
                 color: #fff;
