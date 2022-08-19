@@ -30,7 +30,7 @@ export default {
     padding-right: var(--content-nav-width);
 }
 .markdown-post-inner {
-    max-width: 764px;
+    max-width: 804px;
     padding: 0 32px;
     margin: 0 auto;
 }

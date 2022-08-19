@@ -6,15 +6,16 @@
             :key="v.name"
         >
 
-            <router-link
+            <component
+                :is="(v.children && (v.children.length >0))?'a':'router-link'"
                 v-if="v.path"
-                :class="{ top:true,disabled:v.children}"
-                :to="v.path"
+                :class="{ top:true,link_able:!v.children }"
+                :to="(v.children && (v.children.length >0))?'':v.path"
             >
                 <div>
                     <span>{{v.name}}</span>
                 </div>
-            </router-link>
+            </component>
             <router-link
                 v-for="v in (v.children || [])"
                 :key="v.name"
@@ -76,21 +77,27 @@ nav.sidebar {
         &.top + a.child {
             margin-top: 4px;
         }
+
         &.top {
             > div {
                 cursor: pointer !important;
                 color: #888888;
                 font-weight: 600;
                 font-size: 14px;
-                cursor: pointer;
                 padding: 12px 24px;
                 transition: all 0.3s ease-out;
                 white-space: nowrap;
                 flex: auto;
+            }
+        }
 
-                &:hover {
-                    background: var(--theme-color-light);
-                }
+        &.top.link_able {
+            > div {
+                cursor: pointer;
+            }
+
+            &.link_able:hover {
+                background: var(--theme-color-light);
             }
         }
 
