@@ -38,7 +38,6 @@
         "vue-template-compiler": "2.6.11"
     },
     "dependencies": {
-        "fs-extra": "^10.1.0",
-        "togii-cli-vue2-component": "^0.0.18"
+        "fs-extra": "^10.1.0"
     }
 }

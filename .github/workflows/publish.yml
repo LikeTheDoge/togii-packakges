@@ -29,7 +29,7 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: "16.x"
-          registry-url: "http://39.101.133.158:4873/"
+          registry-url: "http://1.15.102.208:4873/"
 
       - name: Configure Git User
         run: |
