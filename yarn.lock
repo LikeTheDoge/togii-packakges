@@ -11142,10 +11142,10 @@ to-regex@^3.0.1, to-regex@^3.0.2:
     regex-not "^1.0.2"
     safe-regex "^1.1.0"
 
-togii-cli-vue2-component@^0.0.18:
-  version "0.0.18"
-  resolved "http://39.101.133.158:4873/togii-cli-vue2-component/-/togii-cli-vue2-component-0.0.18.tgz#ed65601f80c5628ca4814e8d726b2a2c259badeb"
-  integrity sha512-bvkFaXhIXQibE4AiiKdQvT141Acig7U4OHmvyUygSSJvftiSEnhBWSUDHxIccO1ZkMilmcd8sRtH4DKBEwSvUg==
+togii-cli-package@^0.0.21:
+  version "0.0.21"
+  resolved "http://1.15.102.208:4873/togii-cli-package/-/togii-cli-package-0.0.21.tgz#f9409cb9bcd52c74e20e11177ea30bc3d17521d3"
+  integrity sha512-oeW0147+azjoMciRA6ZGi/pT94BBt/W8CRgxRgNjuqsiuG+y5K6RbvTWLNy1pATOY7esOICdMaF18S4qixiDmQ==
   dependencies:
     "@types/fs-extra" "^9.0.13"
     "@types/markdown-it" "^12.2.3"

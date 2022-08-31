@@ -39,6 +39,6 @@
     },
     "dependencies": {
         "fs-extra": "^10.1.0",
-        "togii-cli-vue2-component": "^0.0.18"
+        "togii-cli-package": "^0.0.21"
     }
 }
