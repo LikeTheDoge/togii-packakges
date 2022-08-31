@@ -52,6 +52,7 @@ const edit_package_json = (project_path: string) => {
         }
 
         Object.assign(json.scripts, {
+            "dev": 'togii-cli dev && vue-cli-service serve',
             "doc:serve": 'togii-cli doc && vue-cli-service serve',
             "doc:build": "togii-cli doc --build && vue-cli-service build"
         })

@@ -106,3 +106,5 @@ dist
 lib/
 build/
 /public
+__doc_source__/
+__dev_source__/

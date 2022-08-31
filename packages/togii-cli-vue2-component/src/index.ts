@@ -3,6 +3,7 @@
 import { doc } from './script/doc'
 import { init } from './script/init'
 import { add } from './script/add'
+import { dev } from './script/dev'
 import * as mri from 'mri'
 
 const method = (process.argv[2]).trim()
@@ -10,7 +11,7 @@ const argv = mri(process.argv.slice(3))
 const project_path = process.cwd()
 
 const all: { [key: string]: (project_path: string, _: any) => void } = {
-    init, doc, add
+    init, doc, add,dev
 }
 const target = all[method]
 

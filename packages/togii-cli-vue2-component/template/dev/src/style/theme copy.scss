@@ -1,0 +1,117 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, PingFang SC, Microsoft YaHei, Source Han Sans SC, Noto Sans CJK SC, WenQuanYi Micro Hei, sans-serif;
+    line-height: 1.5;
+}
+
+@font-face {
+    font-family: "base";
+    /* Project id 3575558 */
+    src: url('iconfont.woff2?t=1659953808849') format('woff2'), url('iconfont.woff?t=1659953808849') format('woff'), url('iconfont.ttf?t=1659953808849') format('truetype');
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+}
+
+:root {
+    --font-weight-normal: 400;
+    --font-weight-bolder: 700;
+    --font-weight-header: 500;
+    --font-size-small: 12px;
+    --line-height-small: 20px;
+    --font-size-normal: 14px;
+    --line-height-normal: 22px;
+    --font-size-large: 16px;
+    --line-height-large: 24px;
+    --font-size-title: 18px;
+    --line-height-title: 26px;
+    --action-color-light: #f0f6ff;
+    --action-color: #4771f8;
+    --warning-color-light: #fff7e6;
+    --warning-color: #fa8b0c;
+    --success-color-light: #f0fce3;
+    --success-color: #45bd09;
+    --error-color-light: #fff1f0;
+    --error-color: #eb2f3f;
+    --action-color-disable: #9cb9ff;
+    --action-color-hover: #7398fe;
+    --action-color-active: #2145d9;
+    --error-color-disable: #ff8587;
+    --error-color-hover: #f75961;
+    --error-color-active: #c41d31;
+    --text-color-title: rgba(0, 0, 0, 0.85);
+    --text-color-title-light: #ffffff;
+    --text-color-content: rgba(0, 0, 0, 0.85);
+    --text-color-content-light: rgba(255, 255, 255, 0.85);
+    --text-color-sub: rgba(0, 0, 0, 0.65);
+    --text-color-sub-light: rgba(255, 255, 255, 0.65);
+    --text-color-desc: rgba(0, 0, 0, 0.45);
+    --text-color-desc-light: rgba(255, 255, 255, 0.65);
+    --text-color-disable: rgba(0, 0, 0, 0.25);
+    --text-color-disable-light: rgba(255, 255, 255, 0.45);
+    --hr-color-ver: rgba(0, 0, 0, 0.06);
+    --hr-color-ver-light: rgba(255, 255, 255, 0.12);
+    --hr-color-hor: rgba(0, 0, 0, 0.06);
+    --hr-color-hor-light: rgba(255, 255, 255, 0.12);
+    --form-color-border: rgba(0, 0, 0, 0.15);
+    --form-color-border: rgba(0, 0, 0, 0.15);
+    --content-layout-width: 1200px;
+    --content-layout-margin: 0 auto;
+}
+
+.btn-link {
+    font-size: var(--font-size-normal);
+    line-height: var(--line-height-normal);
+    color: var(--action-color);
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+}
+
+.btn-link:hover {
+    color: var(--action-color-hover);
+}
+
+.btn-link:active {
+    color: var(--action-color-active);
+}
+
+.btn-link-arrow::after {
+    font-family: "base" !important;
+    content: "\e69b";
+    transition: all 0.3s ease-out;
+    padding-left: 6px;
+}
+
+.btn-link-arrow:hover::after {
+    padding-left: 10px;
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+    font-size: var(--font-size-normal);
+    line-height: var(--line-height-normal);
+    color: var(--text-color-title-light);
+    background-color: var(--action-color);
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+}
+
+.btn-block:hover {
+    background-color: var(--action-color-hover);
+}
+
+.btn-block:active {
+    background-color: var(--action-color-active);
+}
+
+.hr-ver {
+    display: inline-block;
+    height: 12px;
+    margin: 4px 8px;
+    width: 1px;
+    vertical-align: bottom;
+    background: var(--hr-color-ver);
+}

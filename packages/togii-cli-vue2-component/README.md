@@ -40,6 +40,12 @@ yarn add togii-cli-vue2-component@latest
 之后可以通过 `vue-cli-service build` 生成目标代码到 `/dist` 目录
 
 
+## 本地开发调试服务
+
+`dev` -> 生成调试代码 
+  
+会在项目内添加临时开发目录  `_dev_source` 并拷贝 `config/vue.config.dev.js` 到根目录
+
 ## npm script 脚本
 
 `yarn doc:serve`
@@ -51,3 +57,8 @@ yarn add togii-cli-vue2-component@latest
 
 - 调用 `togii-cli doc --build` 生成代码
 - 调用 `vue-cli-service build`,生成组件库项目的文档。
+
+`yarn dev`
+
+- 调用 `toggii-cli dev` 
+- 调用 `vue-cli-service serve` 打开开发调试服务

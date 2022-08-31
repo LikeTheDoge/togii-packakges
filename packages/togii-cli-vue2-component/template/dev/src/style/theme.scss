@@ -1,0 +1,221 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, PingFang SC, Microsoft YaHei, Source Han Sans SC, Noto Sans CJK SC, WenQuanYi Micro Hei, sans-serif;
+    line-height: 1.5;
+}
+
+// @font-face {
+//     font-family: "base";
+//     /* Project id 3575558 */
+//     src: url('iconfont.woff2?t=1659953808849') format('woff2'), url('iconfont.woff?t=1659953808849') format('woff'), url('iconfont.ttf?t=1659953808849') format('truetype');
+// }
+// 清楚按钮默认样式
+button {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+}
+
+:root {
+    // 字体
+    --font-weight-normal: 400;
+    --font-weight-bolder: 700;
+    --font-weight-header: 500;
+    --font-size-small: 12px;
+    --line-height-small: 20px;
+    --font-size-normal: 14px;
+    --line-height-normal: 22px;
+    --font-size-large: 16px;
+    --line-height-large: 24px;
+    --font-size-title: 18px;
+    --line-height-title: 26px;
+    // 颜色
+    --action-color-light: #f0f6ff;
+    --action-color: #4771f8;
+    --warning-color-light: #fff7e6;
+    --warning-color: #fa8b0c;
+    --success-color-light: #f0fce3;
+    --success-color: #45bd09;
+    --error-color-light: #fff1f0;
+    --error-color: #eb2f3f;
+    --action-color-disable: #9cb9ff;
+    --action-color-hover: #7398fe;
+    --action-color-active: #2145d9;
+    --error-color-disable: #ff8587;
+    --error-color-hover: #f75961;
+    --error-color-active: #c41d31;
+    --text-color-title: rgba(0, 0, 0, 0.85);
+    --text-color-title-light: #ffffff;
+    --text-color-content: rgba(0, 0, 0, 0.85);
+    --text-color-content-light: rgba(255, 255, 255, 0.85);
+    --text-color-sub: rgba(0, 0, 0, 0.65);
+    --text-color-sub-light: rgba(255, 255, 255, 0.65);
+    --text-color-desc: rgba(0, 0, 0, 0.45);
+    --text-color-desc-light: rgba(255, 255, 255, 0.65);
+    --text-color-disable: rgba(0, 0, 0, 0.25);
+    --text-color-disable-light: rgba(255, 255, 255, 0.45);
+    --hr-color-ver: rgba(0, 0, 0, 0.06);
+    --hr-color-ver-light: rgba(255, 255, 255, 0.12);
+    --hr-color-hor: rgba(0, 0, 0, 0.06);
+    --hr-color-hor-light: rgba(255, 255, 255, 0.12);
+    --form-color-border: rgba(0, 0, 0, 0.15);
+    --form-color-border: rgba(0, 0, 0, 0.15);
+    // 布局
+    --content-layout-width: 1200px;
+    --content-layout-margin: 0 auto;
+    // 按钮相关
+    --btn-block-line-height-small: 24px;
+    --btn-block-line-height-normal: 24px;
+    --btn-block-line-height-large: 24px;
+    // 过渡效果
+    --ease-out-common: all 0.3s ease-out;
+}
+
+.e-text {
+    --e_text-line_height: var(--line-height-normal);
+    --e_text-font_size: var(--font-size-normal);
+    font-size: var(--e_text-font_size);
+    line-height: var(--e_text-line_height);
+    &.small {
+        --e_text-line_height: var(--line-height-small);
+        --e_text-font_size: var(--font-size-small);
+    }
+    &.large {
+        --e_text-line_height: var(--line-height-large);
+        --e_text-font_size: var(--font-size-large);
+    }
+    &.title {
+        --e_text-line_height: var(--line-height-title);
+        --e_text-font_size: var(--font-size-title);
+    }
+}
+
+.e-btn {
+    font-size: var(--font-size-normal);
+    line-height: var(--line-height-normal);
+    transition: var(--ease-out-common);
+    width: fit-content;
+    text-align: center;
+    &.arrow::after {
+        --e_btn_arrow-left: 4px;
+        --e_btn_arrow-right: -4px;
+        font-family: "base" !important;
+        content: "\e69b";
+        transition: all 0.3s ease-out;
+        display: inline-block;
+        margin-right: var(--e_btn_arrow-right);
+        padding-left: var(--e_btn_arrow-left);
+    }
+    &.arrow:hover::after {
+        padding-left: 10px;
+    }
+    &.link {
+        // 颜色和透明度
+        // 没有 size 配置，通过 font-size 进行修改
+        --e_btn_block-text_color: var(--action-color);
+        --e_btn_block-opacity: 1;
+        --e_btn_block-text_color-hover: var(--action-color-hover);
+        --e_btn_block-opacity-hover: 1;
+        --e_btn_block-text_color-active: var(--action-color-active);
+        --e_btn_block-opacity-active: 1;
+        --e_btn_block-text_color-disabled: var(--action-color-disable);
+        --e_btn_block-opacity-disabled: 1;
+        font-size: inherit;
+        line-height: inherit;
+        cursor: pointer;
+        color: var(--e_btn_block-text_color);
+        opacity: var(--e_btn_block-opacity);
+        &:hover {
+            color: var(--e_btn_block-text_color-hover);
+            opacity: var(--e_btn_block-opacity-hover);
+        }
+        &:active {
+            color: var(--e_btn_block-text_color-active);
+            opacity: var(--e_btn_block-opacity-active);
+        }
+        &.disabled {
+            color: var(--e_btn_block-text_color-disabled);
+            opacity: var(--e_btn_block-opacity-disabled);
+            cursor: not-allowed;
+        }
+    }
+    &.block {
+        // 基本
+        --e_btn_block-line_height: 30px;
+        --e_btn_block-margin: 4px;
+        --e_btn_block-padding: 0 15px;
+        --e_btn_block-border_radius: 0px;
+        --e_btn_block-min_width: 74px;
+        --e_btn_block-font_size: var(--font-size-normal);
+        // 正常状态
+        --e_btn_block-color: var(--action-color);
+        --e_btn_block-bg_color: var(--action-color);
+        --e_btn_block-border_color: var(--action-color);
+        --e_btn_block-text_color: #fff;
+        --e_btn_block-opacity: 1;
+        // hover 状态
+        --e_btn_block-color-hover: var(--action-color-hover);
+        --e_btn_block-bg_color-hover: var(--action-color-hover);
+        --e_btn_block-border_color-hover: var(--action-color-hover);
+        --e_btn_block-text_color-hover: #fff;
+        --e_btn_block-opacity-hover: 1;
+        // active 状态
+        --e_btn_block-color-active: var(--action-color-active);
+        --e_btn_block-bg_color-active: var(--action-color-active);
+        --e_btn_block-border_color-active: var(--action-color-active);
+        --e_btn_block-text_color-active: #fff;
+        --e_btn_block-opacity-active: 1;
+        // disabled 状态
+        --e_btn_block-color-disabled: var(--action-color-disable);
+        --e_btn_block-bg_color-disabled: var(--action-color-disable);
+        --e_btn_block-border_color-disabled: var(--action-color-disable);
+        --e_btn_block-text_color-disabled: #fff;
+        --e_btn_block-opacity-disabled: 1;
+        border: 1px solid var(--e_btn_block-border_color);
+        font-size: var(--e_btn_block-font_size);
+        line-height: var(--e_btn_block-line_height);
+        margin: var(--e_btn_block-margin);
+        padding: var(--e_btn_block-padding);
+        color: var(--e_btn_block-text_color);
+        background-color: var(--e_btn_block-bg_color);
+        border-radius: var(--e_btn_block-border_radius);
+        opacity: var(--e_btn_block-opacity);
+        min-width: var(--e_btn_block-min_width);
+        display: block;
+        width: fit-content;
+        cursor: pointer;
+        transition: all 0.3s ease-out;
+        &.inline {
+            display: inline-block;
+        }
+        &:hover {
+            background-color: var(--e_btn_block-bg_color-hover);
+            border-color: var(--e_btn_block-border_color-hover);
+            color: var(--e_btn_block-text_color-hover);
+            opacity: var(--e_btn_block-opacity-hover);
+        }
+        &:active {
+            background-color: var(--e_btn_block-bg_color-active);
+            border-color: var(--e_btn_block-border_color-active);
+            color: var(--e_btn_block-text_color-active);
+            opacity: var(--e_btn_block-opacity-active);
+        }
+        &.disabled {
+            cursor: not-allowed;
+            background-color: var(--e_btn_block-bg_color-disabled) !important;
+            border-color: var(--e_btn_block-border_color-disabled) !important;
+            color: var(--e_btn_block-text_color-disabled)!important;
+            opacity: var(--e_btn_block-opacity-disabled);
+        }
+        &.small {
+            --e_btn_block-line_height: 22px;
+            --e_btn_block-font_size: var(--font-size-small);
+            // todo
+        }
+        &.large {
+            // todo
+        }
+        &.ghost {
+            // todo
+        }
+    }
+}

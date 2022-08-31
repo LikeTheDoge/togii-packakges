@@ -7,7 +7,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "doc:serve": "togii-cli doc && vue-cli-service serve",
-    "doc:build": "togii-cli doc --build && vue-cli-service build&& togii-static 8001 ./dist"
+    "doc:build": "togii-cli doc --build && vue-cli-service build",
+    "dev:serve": "togii-cli dev && vue-cli-service serve"
   },
   "author": "",
   "license": "ISC",
