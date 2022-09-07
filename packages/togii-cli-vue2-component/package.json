@@ -1,6 +1,6 @@
 {
   "name": "togii-cli-vue2-component",
-  "version": "0.0.23",
+  "version": "0.0.24",
   "main": "lib/cjs/index.js",
   "module": "lib/mjs/index.js",
   "exports": {
