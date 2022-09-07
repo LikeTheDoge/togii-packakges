@@ -5,14 +5,6 @@ module.exports = {
     publicPath: '/' + pkg.name,
     outputDir: 'dist/' + pkg.name,
     lintOnSave: false,
-    configureWebpack: {
-        resolve: {
-            alias: {
-                'eco-lib-components': path.join(__dirname, './packages'),
-            },
-        },
-    },
-
     // 修改 src 为 examples
     pages: {
         index: {

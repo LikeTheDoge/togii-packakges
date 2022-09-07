@@ -38,10 +38,12 @@
     "@types/fs-extra": "^9.0.13",
     "@types/markdown-it": "^12.2.3",
     "@types/rimraf": "^3.0.2",
+    "@types/shelljs": "^0.8.11",
     "fs-extra": "^10.1.0",
     "gray-matter": "^4.0.3",
     "markdown-it": "^13.0.1",
     "mri": "^1.2.0",
-    "rimraf": "^3.0.2"
+    "rimraf": "^3.0.2",
+    "shelljs": "^0.8.5"
   }
 }
