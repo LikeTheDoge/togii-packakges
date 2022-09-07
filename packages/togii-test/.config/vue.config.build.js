@@ -1,6 +1,7 @@
 const path = require('path');
 module.exports = {
     outputDir: 'lib',
+    lintOnSave: false,
     css: {
         extract: true,
     },

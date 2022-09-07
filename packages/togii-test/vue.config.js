@@ -1,8 +1,14 @@
 const path = require('path');
 module.exports = {
     outputDir: 'lib',
+    lintOnSave: false,
     css: {
         extract: true,
+    },
+    pages: {
+        'EcoAdminComponents': {
+            entry: 'packages/components.js'
+        }
     },
     chainWebpack: config => {
         config.module

@@ -1,1 +1,0 @@
-export { default as DateStr } from './src/Index.vue';

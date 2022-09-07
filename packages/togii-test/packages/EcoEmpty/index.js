@@ -1,1 +1,0 @@
-export { default as EcoEmpty } from './src/Index'
