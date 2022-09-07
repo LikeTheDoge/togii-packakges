@@ -33,14 +33,20 @@ export const build = (project_path: string, _: any) => {
 
     components.forEach(name => {
         shell.exec(`npx vue-cli-service build --target lib --name ${name} --dest build packages/${name}/index.js`)
+    
         file.copy(
             path.resolve(project_path, './build', `./${name}.common.js`),
             path.resolve(project_path, './lib', `./${name}.common.js`),
         )
-        file.copy(
-            path.resolve(project_path, './build', `./${name}.css`),
-            path.resolve(project_path, './lib', `./${name}.css`),
-        )
+
+        if(file.exist(path.resolve(project_path, './build', `./${name}.css`))){
+            file.copy(
+                path.resolve(project_path, './build', `./${name}.css`),
+                path.resolve(project_path, './lib', `./${name}.css`),
+            )
+        }else{
+            shell.touch(path.resolve(project_path, './lib', `./${name}.css`))
+        }
     })
     if (folder.exist(path.resolve(project_path, './build'))) {
         rimraf.sync(path.resolve(project_path, './build'))
