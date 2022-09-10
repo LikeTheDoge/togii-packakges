@@ -13,6 +13,7 @@ import VueRouter from 'vue-router';
 import Components from '../../packages/components';
 import MarkDownPostCodeView from './MarkDownPostCodeView.vue';
 import MarkDownPost from './MarkDownPost.vue';
+import DemoArea from './DemoArea'
 import 'github-markdown-css';
 import './theme/markdown.less';
 import 'highlight.js/styles/atom-one-light.css';
