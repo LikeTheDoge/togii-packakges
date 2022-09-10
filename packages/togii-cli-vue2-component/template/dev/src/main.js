@@ -13,10 +13,13 @@ import 'highlight.js/styles/atom-one-light.css';
 import Vue from 'vue';
 import Antd from 'ant-design-vue';
 import App from './App.vue';
+import DemoArea from './DemoArea'
 
 Vue.config.productionTip = false;
 
 Vue.use(Antd);
+
+Vue.component('DemoArea',DemoArea)
 
 new Vue({
     render: h => h(App),
